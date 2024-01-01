@@ -1,0 +1,11 @@
+/* ProductDetail.css */
+
+.product-detail-container {
+    padding: 10px;
+  }
+  
+  .square-box {
+    height: 600px; /* Set the desired height for the square box */
+    object-fit: cover;
+  }
+  

@@ -1,0 +1,45 @@
+
+[
+  {
+    "id": 1,
+    "name": "ROG GZ301VU",
+    "image": "/Data/laptopimg/GZ301VU-BLACK-.jpg",
+    "spec": {
+      "cpu": "Intel Core I9 13900H",
+      "gpu": "NVIDIA  RTX 2080 Ti",
+      "memory": "16GB DDR4",
+      "storage": "1TB SSD",
+      "display":" 13.4 QHD ( 2560 x 1600) 165Hz",
+      "price": "$2099.00",
+      "Windows": "11"
+    }
+  },
+  {
+    "id": 2,
+    "name": "AORUS-5-SE4",
+    "image": "/Data/laptopimg/AORUS-5-SE4.jpg",
+    "spec": {
+      "cpu": "Intel Core I7 12700H",
+      "gpu": "NVIDIA  RTX3070 8GB",
+      "memory": "16GB DDR4",
+      "storage": "512GB SSD",
+      "display":" 15.6FHD ( 1920 x 1080) IPS , 144Hz",
+      "price": "$1529.00"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Alienware-m15-R7",
+    "image": "/Data/laptopimg/Dell-Alienware-m15-R7.jpg",
+    "spec": {
+      "cpu": "Intel Core I7 12700H",
+      "gpu": "NVIDIA  RTX 3060 6GB",
+      "memory": "32GB DDR4",
+      "storage": "1TB NVMe SSD",
+      "display":" 15.6FHD ( 1920 x 1080) 165Hz",
+      "price": "$1499.99"
+    }
+  }
+  
+  
+]

@@ -1,0 +1,46 @@
+
+[
+    {
+      "id": 1,
+      "name": "Gaming PC 1",
+      "image": "/Data/desktopimg/desk1.jpg",
+      "additionalImages": "/Data/desktopimg/desk3.jpg",
+      "spec": {
+        "cpu": "Intel Core i7-9700K",
+        "gpu": "NVIDIA  RTX 2080 Ti",
+        "memory": "16GB DDR4",
+        "storage": "1TB SSD",
+        "price": "$1999.99"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Office PC 1",
+      "image": "/Data/desktopimg/desk2.jpg",
+      "additionalImages": "/Data/desktopimg/desk3.jpg",
+      "spec": {
+        "cpu": "Intel Core i5-9400",
+        "gpu": "NVIDIA  1060",
+        "memory": "8GB DDR4",
+        "storage": "512GB SSD",
+        "price": "$799.99"
+        
+      }
+    },
+    {
+      "id": 3,
+      "name": "Gaming Laptop 1",
+      "image": "/Data/desktopimg/desk3.jpg",
+      "additionalImages": "/Data/desktopimg/desk3.jpg",
+      "spec": {
+        "cpu": "AMD Ryzen 7 5800H",
+        "gpu": "NVIDIA  RTX 3060",
+        "memory": "32GB DDR4",
+        "storage": "1TB NVMe SSD",
+        "price": "$1499.99"
+      }
+    }
+    
+    
+  ]
+  
