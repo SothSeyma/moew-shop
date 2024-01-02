@@ -4,6 +4,8 @@
       "id": 1,
       "name": "ROG GZ301VU",
       "image": "/Data/laptopimg/GZ301VU-BLACK-.jpg",
+      "image1": "/Data/laptopimg/ROG-GZ301VU1.jpg",
+      "image2": "/Data/laptopimg/ROG-GZ301VU2.jpg",
       "spec": {
         "cpu": "Intel Core I9 13900H",
         "gpu": "NVIDIA  RTX 2080 Ti",
