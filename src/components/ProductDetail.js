@@ -10,6 +10,14 @@ function ProductDetail() {
   const { type, id } = useParams();
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const [mainImage, setMainImage] = useState('');
+  const thumbnailStyle = { //for smaller poster at right
+    width: '100%',
+    height: '110px',cursor: 'pointer',border: '1px solid black',
+  };
+  const handleThumbnailClick = (newImageUrl) => {
+    setMainImage(newImageUrl);
+  };
 
   useEffect(() => {
     const fetchProductDetails = async () => {
@@ -19,6 +27,7 @@ function ProductDetail() {
         const productData = await productResponse.json();
         const selectedProduct = productData.find((item) => item.id === parseInt(id));
         setProduct(selectedProduct);
+        setMainImage(selectedProduct.image);
 
         // Fetch related products based on the type
         const relatedProductsResponse = await fetch(`/Data/${type}dataRelatedProducts.json`);
@@ -28,6 +37,7 @@ function ProductDetail() {
         console.error('Error fetching data:', error);
       }
     };
+    
 
     fetchProductDetails();
   }, [type, id]);
@@ -40,40 +50,82 @@ function ProductDetail() {
 
   return (
     <Container className="product-detail-container">
-      <Row>
-        <Col md={6}>
-          <Card>
-            <Card.Img
-              variant="top"
-              src={process.env.PUBLIC_URL + image}
-              alt={name}
-              className="card-img-top square-box"
-            />
-          </Card>
-        </Col>
-        <Col md={6}>
-          <Card>
-            <Card.Body>
-              <Card.Title>{name}</Card.Title>
-              <Card.Text>
-                <p>
-                  <strong></strong>
-                  <span style={{ color: 'red', fontSize: '30px' }}>{spec.price}</span> <br />
-                  <strong>CPU:</strong> {spec.cpu} <br />
-                  <strong>GPU:</strong> {spec.gpu} <br />
-                  <strong>RAM:</strong> {spec.memory} <br />
-                  <strong>Storage:</strong> {spec.storage} <br />
-                  <strong>Display:</strong> {spec.display || 'N/A'} <br />
-                  <strong style={{ color: 'red' }}>Free: New Gaming Backpack, Bottle</strong> <br />
-                  <strong style={{ color: 'red' }}>Free: Gaming Mouse, Gaming Headset</strong> <br />
-                  <strong style={{ color: 'red' }}>Free: Mousepad, Cooling Fan</strong>
-                </p>
-              </Card.Text>
-              <Button variant="primary">Add To Cart</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+      
+      <div className="product">
+      <div className="ecommerce-gallery" data-mdb-zoom-effect="true" data-mdb-auto-height="true">
+            <div className="row py-3 shadow-5">
+          <div className="col-7 mb-5">
+            <div className="lightbox">
+              <img
+                src={mainImage}
+                alt="Gallery image 1"
+                className="ecommerce-gallery-main-img main-image w-100"
+                style={{ width: '100%', height: '350px' ,border: '1px solid black'}}
+              />
+            </div>
+          </div>
+          <div className="col-2">
+            <div className="row">
+              <div className="col-12 mt-1">
+                <img
+                  src={product.image}
+                  alt="Gallery image 1"
+                  className="active w-100"
+                  style={thumbnailStyle}
+                  onClick={() => handleThumbnailClick(product.image)}
+                />
+              </div>
+              <div className="col-12 mt-1">
+                <img
+                  src={product.image1}
+                  alt="Gallery image 2"
+                  className="w-100"
+                  style={thumbnailStyle}
+                  onClick={() => handleThumbnailClick(product.image1)}    
+                />
+              </div>
+              <div className="col-12 mt-1">
+                <img
+                  src={product.image2}
+                  alt="Gallery image 3"
+                  className="w-100"
+                  style={thumbnailStyle}
+                  onClick={() => handleThumbnailClick(product.image2)}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <div className="spec">
+            
+              <Card style={{width:'500px'}}>
+                <Card.Body>
+                  <Card.Title>
+                    <h1>{name}</h1></Card.Title>
+                  <Card.Text>
+                    <p style={{  fontSize: '20px' ,fontWeight:'bold'}}>
+                      
+                      <span style={{ color: 'red', fontSize: '30px' ,fontWeight:'bold'}}>{spec.price}</span> <br />
+                      CPU:{spec.cpu} <br />
+                      GPU:{spec.gpu} <br />
+                      RAM:{spec.memory} <br />
+                      Storage:{spec.storage} <br />
+                      Display:{spec.display || 'N/A'} <br />
+                      <span style={{color:'red'}}>
+                       Free: New Gaming Backpack, Bottle <br />
+                       Free: Gaming Mouse, Gaming Headset <br />
+                       Free: Mousepad, Cooling Fan
+                       </span>
+                    </p>
+                  </Card.Text>
+                  <Button variant="primary">Add To Cart</Button>
+                </Card.Body>
+              </Card>
+            
+          </div>
+      </div>
+      
 
       {/* Display related products and their details */}
       <Row className="mt-4">

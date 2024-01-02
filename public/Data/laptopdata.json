@@ -4,8 +4,7 @@
       "id": 1,
       "name": "ROG GZ301VU",
       "image": "/Data/laptopimg/GZ301VU-BLACK-.jpg",
-      "image1": "/Data/laptopimg/ROG-GZ301VU1.jpg",
-      "image2": "/Data/laptopimg/ROG-GZ301VU2.jpg",
+      "additionalImages": "/Data/desktopimg/desk3.jpg",
       "spec": {
         "cpu": "Intel Core I9 13900H",
         "gpu": "NVIDIA  RTX 2080 Ti",
@@ -19,6 +18,7 @@
       "id": 2,
       "name": "AORUS-5-SE4",
       "image": "/Data/laptopimg/AORUS-5-SE4.jpg",
+      "additionalImages": "/Data/desktopimg/desk3.jpg",
       "spec": {
         "cpu": "Intel Core I7 12700H",
         "gpu": "NVIDIA  RTX3070 8GB",
@@ -32,6 +32,7 @@
       "id": 3,
       "name": "Alienware-m15-R7",
       "image": "/Data/laptopimg/Dell-Alienware-m15-R7.jpg",
+      "additionalImages": "/Data/desktopimg/desk3.jpg",
       "spec": {
         "cpu": "Intel Core I7 12700H",
         "gpu": "NVIDIA  RTX 3060 6GB",

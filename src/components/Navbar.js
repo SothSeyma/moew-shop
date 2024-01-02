@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Nav, Navbar, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
 import "../App.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function CustomNavbar() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    // Navigate to the search results page with the search query as a query parameter
+    navigate(`/search?query=${searchQuery}`);
+  };
   return (
     <Navbar expand="lg" className="sticky-top">
       <Container>
@@ -31,15 +40,17 @@ function CustomNavbar() {
             <Nav.Link href="#about">About</Nav.Link>
             
           </Nav>
-          <Form className="d-flex">
+          <Form onSubmit={handleSearch} className="d-flex">
             <FormControl
               type="search"
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+            <Button variant="outline-success" type="submit">Search</Button>
+            </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>

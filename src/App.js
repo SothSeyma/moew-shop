@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 import ProductDetail from './components/ProductDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
+import SearchResults from './components/SearchResults'; 
 function App() {
   return (
     <Router>
@@ -20,6 +20,7 @@ function App() {
         <CustomNavbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/search" element={<SearchResults />} />
           <Route path="/HomePage" element={<HomePage />} />
           <Route path="/product/:type/:id" element={<ProductDetail />} />
           <Route path="/desktop" element={<DesktopPage />} />

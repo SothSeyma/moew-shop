@@ -1,11 +1,16 @@
 /* ProductDetail.css */
 
 .product-detail-container {
-    padding: 10px;
+    padding: 50px;
   }
   
   .square-box {
     height: 600px; /* Set the desired height for the square box */
     object-fit: cover;
+  }
+  .product{
+    display: flex;
+    justify-content: space-between;
+    
   }
   
